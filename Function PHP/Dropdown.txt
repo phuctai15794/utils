@@ -1,0 +1,22 @@
+$(document).ready(function(){
+        $(".label-toggle").click(function(){
+            if($(this).next().hasClass("active"))
+            {
+                $(this).next().removeClass("active");
+                $(this).next().stop(true,true).slideUp();
+                $(this).find("i").removeClass("fas fa-minus");
+                $(this).find("i").addClass("fas fa-plus");
+            }
+            else
+            {
+                $(".content-toggle").removeClass("active");
+                $(".content-toggle").stop(true,true).slideUp();
+                $(".label-toggle").find("i").removeClass("fas fa-minus");
+                $(".label-toggle").find("i").addClass("fas fa-plus");
+                $(this).find("i").removeClass("fas fa-plus");
+                $(this).find("i").addClass("fas fa-minus");
+                $(this).next().addClass("active");
+                $(this).next().stop(true,true).slideDown();
+            }
+        })
+    })

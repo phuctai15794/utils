@@ -1,0 +1,21 @@
+// URL
+Add url http://cdn.domain.com into css, js, img path
+
+// head
+<!-- CDN -->
+<link href="http://cdn.domain.com" rel="dns-prefetch">
+
+// css
+
+// js
+'<script ... rel="dns-prefetch"></script>'
+
+// image
+$result = "<img .. rel='dns-prefetch'/>";
+
+// htaccess for Fonts
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+    <IfModule mod_headers.c>
+        Header set Access-Control-Allow-Origin "*"
+    </IfModule>
+</FilesMatch>

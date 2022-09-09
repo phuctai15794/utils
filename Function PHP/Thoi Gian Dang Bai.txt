@@ -1,0 +1,30 @@
+﻿function sw_human_time_diff($date) {
+$langs = array('giây', 'phút', 'giờ', 'ngày', 'tuần', 'tháng', 'năm');
+$chunks = array(
+array( 60 * 60 * 24 * 365 ,  $langs[6], $langs[6] ),
+array( 60 * 60 * 24 * 30 ,$langs[5], $langs[5] ),
+array( 60 * 60 * 24 * 7, $langs[4],$langs[4] ),
+array( 60 * 60 * 24 , $langs[3],$langs[3] ),
+array( 60 * 60 , $langs[2], $langs[2] ),
+array( 60 , $langs[1],$langs[1] ),
+array( 1,  $langs[0],$langs[0] )
+);
+
+$newer_date = time();
+
+
+$since = $newer_date - $date;
+if ( 0 > $since )
+return __( 'Gần đây', 'swhtd' );
+for ( $i = 0, $j = count($chunks); $i < $j; $i++) {
+$seconds = $chunks[$i][0];
+if ( ( $count = floor($since / $seconds) ) != 0 )
+break;
+}
+$output = ( 1 == $count ) ? '1 '. $chunks[$i][1] : $count . ' ' . $chunks[$i][2];
+if ( !(int)trim($output) ){
+$output = '0 ' .  $langs[0];
+}
+$output .= ' trước';
+return $output;
+}

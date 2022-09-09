@@ -1,0 +1,13 @@
+function math_price($gia,$giakm)
+	{
+		$gia=$gia-(($gia*$giakm)/100);
+
+		/* Rounded */
+		$gia1 = round($gia/1000);
+		$gia2 = round($gia/1000000);
+
+		if($gia1>$gia2) $gia = $gia1*1000;
+		else if($gia1<$gia2) $gia = $gia2*1000000;
+
+		return $gia;
+	}

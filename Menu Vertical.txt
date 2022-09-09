@@ -1,0 +1,147 @@
+// CSS
+.nav-block {
+	width: 100%;
+	max-height: 420px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: 1px solid #e9e9e9;
+	ul {
+		margin: 0px;
+		padding: 0px;
+		list-style: none;
+		li {
+			&:hover > p > a {
+				color: $colorMain;
+			}
+			&.active > p > span:before {
+				content: "\2212";
+			}
+			&.active > ul {
+				display: block;
+			}
+			p {
+				margin-bottom: 0px;
+				position: relative;
+				border-bottom: 1px solid #e9e9e9;
+				a {
+					color: #222222;
+					font-weight: 400;
+					padding: 11px 35px 9px 40px;
+					text-transform: uppercase;
+					text-decoration: none;
+					display: block;
+					@include background(url(../images/list-icon.png), "", no-repeat, 15px 13px);
+					@extend .transition;
+				}
+				span {
+					position: absolute;
+					top: calc(50% - 25px / 2);
+					right: 10px;
+					cursor: pointer;
+					font-size: 19px;
+					width: 25px;
+					height: 25px;
+					text-align: center;
+					line-height: 25px;
+					opacity: 0.5;
+					&:before {
+						content: "\002B";
+						position: absolute;
+						top: 0px;
+						left: 0px;
+						width: 100%;
+						height: 100%;
+						padding-left: 2px;
+					}
+				}
+			}
+		}
+		ul {
+			display: none;
+			li p a {
+				background: transparent;
+			}
+			ul li p a {
+				padding-left: 55px;
+				position: relative;
+				&:before {
+					content: "";
+					position: absolute;
+					width: 5px;
+					height: 5px;
+					top: 19px;
+					left: 40px;
+					border-radius: 100%;
+					background-color: #999999;
+				}
+			}
+		}
+	}
+}
+
+// HTML
+<div class="nav-block">
+	<ul>
+		<?php foreach ($lists as $klist => $vlist) { ?>
+			<li>
+				<p>
+					<a class="has-child transition" title="<?= $vlist['name' . $lang] ?>" href="<?= $vlist[$sluglang] ?>"><?= $vlist['name' . $lang] ?></a>
+					<span></span>
+				</p>
+				<?php if (!empty($cats)) { ?>
+					<ul>
+						<?php foreach ($cats as $kcat => $vcat) { ?>
+							<?php if ($vcat['id_list'] == $vlist['id']) { ?>
+								<li>
+									<p>
+										<a class="has-child transition" title="<?= $vcat['name' . $lang] ?>" href="<?= $vcat[$sluglang] ?>"><?= $vcat['name' . $lang] ?></a>
+										<span></span>
+									</p>
+									<?php if (!empty($items)) { ?>
+										<ul>
+											<?php foreach ($items as $kitem => $vitem) { ?>
+												<?php if ($vitem['id_cat'] == $vcat['id'] && $vitem['id_list'] == $vlist['id']) { ?>
+													<li>
+														<p>
+															<a class="transition" title="<?= $vitem['name' . $lang] ?>" href="<?= $vitem[$sluglang] ?>"><?= $vitem['name' . $lang] ?></a>
+														</p>
+													</li>
+												<?php } ?>
+											<?php } ?>
+										</ul>
+									<?php } ?>
+								</li>
+							<?php } ?>
+						<?php } ?>
+					</ul>
+				<?php } ?>
+			</li>
+		<?php } ?>
+	</ul>
+</div>
+
+// JS
+$('.nav-block ul li').each(function () {
+	if (!isExist($(this).find('> ul li'))) {
+		$(this).find('> p > span').remove();
+	}
+});
+$('.nav-block ul li p span').click(function () {
+	var link = $(this);
+	var closest_ul = link.closest('ul');
+	var parallel_active_links = closest_ul.find('.active');
+	var closest_li = link.closest('li');
+	var link_status = closest_li.hasClass('active');
+	var count = 0;
+
+	closest_ul.find('ul').slideUp(function () {
+		if (++count == closest_ul.find('ul').length) {
+			parallel_active_links.removeClass('active');
+		}
+	});
+
+	if (!link_status) {
+		closest_li.children('ul').slideDown('medium');
+		closest_li.addClass('active');
+	}
+});

@@ -1,0 +1,382 @@
+// Bỏ config index trong file config.php
+
+// Thêm vi/ vào file admin/templates/layout/seo.php
+
+// Đổi lại href trong file lock.php thành vi/
+
+// Chỉnh lại hàm checkURL()
+$func->checkUrl();
+public function checkURL()
+{
+	global $config_base;
+	
+	$url = '';
+	$urls = array('index','index.php','index.html','trang-chu','trang-chu.html','vi/index','vi/index.php','vi/index.html','vi/trang-chu','vi/trang-chu.html','en/index','en/index.php','en/index.html','en/trang-chu','en/trang-chu.html');
+	
+	if(array_key_exists('REDIRECT_URL', $_SERVER))
+	{
+		$url = explode("/", $_SERVER['REDIRECT_URL']);
+	}
+	else
+	{
+		$url = explode("/", $_SERVER['REQUEST_URI']);
+	}
+
+	if(is_array($url))
+	{
+		$str = $url[count($url)-2];
+		$langkey = (($str == 'vi') || ($str == 'en')) ? $str : 'vi';
+		$url = $url[count($url)-1];
+		if(strpos($url, "?"))
+		{
+			$url = explode("?", $url);
+			$url = $url[0];
+		}
+	}
+
+	if(in_array($url, $urls)) $this->redirect($config_base.$langkey.'/',301);
+}
+
+// Router
+$router->map('GET|POST', 'index.php', 'index', 'index');
+$router->map('GET|POST', '[a:lang]/index.php', 'indexlang', 'indexlang');
+$router->map('GET|POST', '[a:lang]/[a:com]', 'allpage', 'show');
+$router->map('GET|POST', '[a:lang]/', 'allpagelang', 'lang');
+
+// Thêm Redirect Lang bên dưới phần lấy Setting trong router.php
+/* Redirect lang if it is not set or empty */
+if((empty($match['params']['lang']) || !in_array($match['params']['lang'],array('vi','en'))) && !strpos($_SERVER['REQUEST_URI'], 'sitemap.xml') && !strpos($_SERVER['REQUEST_URI'], 'thumbs') && !strpos($_SERVER['REQUEST_URI'], 'watermark'))
+{
+	$lang_default = (!empty($optsetting['lang_default'])) ? $optsetting['lang_default'] : 'vi';
+	$func->redirect($config_base.$lang_default.'/',301);
+}
+
+// Slug - SEO lang (Slug lang chỉnh tiếp trong file ajax/ajax_config.php)
+$sluglang = ($lang == 'vi') ? 'tenkhongdauvi' : 'tenkhongdauen';
+$seolang = ($lang == 'vi') ? 'vi' : 'en';
+
+// Thêm 3 hàm Get ComOringin - Get ComLang - Check ComLang
+// Find data thêm các biến com_vi, com_en, com_origin, com_lang
+/* Get com origin */
+public function get_comorigin($com='')
+{
+	global $config;
+
+	$result = array();
+	$comlang = $config['website']['comlang'];
+
+	if(!empty($comlang) && $com != '')
+	{
+		foreach($comlang as $kcomlang => $vcomlang)
+		{
+			foreach($vcomlang as $vcom)
+			{
+				if($com == $vcom)
+				{
+					$result['com_vi'] = $vcomlang['vi'];
+					$result['com_en'] = $vcomlang['en'];
+					break;
+				}
+			}
+		}
+	}
+	
+	return $result;
+}
+
+/* Get com lang */
+public function get_comlang($com='', $lang='vi')
+{
+	global $config;
+
+	$result = '';
+	$comlang = $config['website']['comlang'];
+
+	if(!empty($comlang) && $com != '')
+	{
+		foreach($comlang as $kcomlang => $vcomlang)
+		{
+			if($com == $kcomlang)
+			{
+				$result = $vcomlang[$lang];
+				break;
+			}
+		}
+	}
+
+	return $result;
+}
+
+/* Check com lang */
+public function check_comlang($com='')
+{
+	global $config;
+
+	$result = array();
+	$comlang = $config['website']['comlang'];
+
+	if($com != '')
+	{
+		foreach($comlang as $kcomlang => $vcomlang)
+		{
+			foreach($vcomlang as $kcom => $vcom)
+			{
+				if($com == $vcom)
+				{
+					$result['lang'] = $kcom;
+					$result['com'] = $vcom;
+					break;
+				}
+			}
+		}
+	}
+
+	return $result;
+}
+
+/* Requick VI */
+$requick_vi = array(
+	/* Sản phẩm */
+	array("tbl"=>"product_list","field"=>"idl","source"=>"product","com"=>"san-pham","type"=>"san-pham","lang"=>"vi"),
+	array("tbl"=>"product_cat","field"=>"idc","source"=>"product","com"=>"san-pham","type"=>"san-pham","lang"=>"vi"),
+	// array("tbl"=>"product_item","field"=>"idi","source"=>"product","com"=>"san-pham","type"=>"san-pham","lang"=>"vi"),
+	// array("tbl"=>"product_sub","field"=>"ids","source"=>"product","com"=>"san-pham","type"=>"san-pham","lang"=>"vi"),
+	// array("tbl"=>"product_brand","field"=>"idb","source"=>"product","com"=>"thuong-hieu","type"=>"san-pham","lang"=>"vi"),
+	array("tbl"=>"product","field"=>"id","source"=>"product","com"=>"san-pham","type"=>"san-pham","menu"=>true,"lang"=>"vi"),
+	
+	/* Tags */
+	// array("tbl"=>"tags","tbltag"=>"product","field"=>"id","source"=>"tags","com"=>"tags-san-pham","type"=>"san-pham","menu"=>true,"lang"=>"vi"),
+	// array("tbl"=>"tags","tbltag"=>"news","field"=>"id","source"=>"tags","com"=>"tags-tin-tuc","type"=>"tin-tuc","menu"=>true,"lang"=>"vi"),
+
+	/* Thư viện ảnh */
+	// array("tbl"=>"product","field"=>"id","source"=>"product","com"=>"thu-vien-anh","type"=>"thu-vien-anh","menu"=>true,"lang"=>"vi"),
+
+	/* Video */
+	// array("tbl"=>"photo","field"=>"id","source"=>"video","com"=>"video","type"=>"video","menu"=>true,"lang"=>"vi"),
+
+	/* Bài viết */
+	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"blog","type"=>"blog","menu"=>true,"lang"=>"vi"),
+
+	/* Trang tĩnh */
+	array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"gioi-thieu","type"=>"gioi-thieu","menu"=>true,"lang"=>"vi"),
+
+	/* Liên hệ */
+	array("tbl"=>"","field"=>"id","source"=>"","com"=>"lien-he","type"=>"","menu"=>true,"lang"=>"vi")
+);
+
+/* Requick EN */
+$requick_en = array(
+	/* Sản phẩm */
+	array("tbl"=>"product_list","field"=>"idl","source"=>"product","com"=>"product","type"=>"san-pham","lang"=>"en"),
+	array("tbl"=>"product_cat","field"=>"idc","source"=>"product","com"=>"product","type"=>"san-pham","lang"=>"en"),
+	array("tbl"=>"product","field"=>"id","source"=>"product","com"=>"product","type"=>"san-pham","menu"=>true,"lang"=>"en"),
+	
+	/* Bài viết */
+	array("tbl"=>"news","field"=>"id","source"=>"news","com"=>"blogs","type"=>"blog","menu"=>true,"lang"=>"en"),
+
+	/* Trang tĩnh */
+	array("tbl"=>"static","field"=>"id","source"=>"static","com"=>"about-us","type"=>"gioi-thieu","menu"=>true,"lang"=>"en"),
+
+	/* Liên hệ */
+	array("tbl"=>"","field"=>"id","source"=>"","com"=>"contact","type"=>"","menu"=>true,"lang"=>"en")
+);
+
+/* Requick */
+$requick = ($lang == 'vi') ? $requick_vi : $requick_en;
+
+/* Find data */
+if($com != 'tim-kiem' && $com != 'account' && $com != 'sitemap')
+{
+	$com_vi = '';
+	$com_en = '';
+	$com_check = $func->check_comlang($com);
+
+	if(!empty($com_check))
+	{
+		if($com_check['lang'] == $lang)
+		{
+			$com_crumb = $com;
+			$com_origin = $func->get_comorigin($com_check['com']);
+			$com_vi = $com_origin['com_vi'];
+			$com_en = $com_origin['com_en'];
+			$url_type = $com_origin['com_vi'];
+		}
+		else
+		{
+			header('HTTP/1.0 404 Not Found', true, 404);
+			include("404.php");
+			exit();
+		}
+	}
+	else
+	{
+		foreach($requick as $k => $v)
+		{
+			$url_tbl = (!empty($v['tbl'])) ? $v['tbl'] : '';
+			$url_tbltag = (!empty($v['tbltag'])) ? $v['tbltag'] : '';
+			$url_type = (!empty($v['type'])) ? $v['type'] : '';
+			$url_field = (!empty($v['field'])) ? $v['field'] : '';
+			$url_com = (!empty($v['com'])) ? $v['com'] : '';
+			
+			if($url_tbl!='' && $url_tbl!='static' && $url_tbl!='photo')
+			{
+				$row = $d->rawQueryOne("select id, tenkhongdauen, tenkhongdauvi from #_$url_tbl where $sluglang = ? and type = ? and hienthi > 0 limit 0,1",array($com,$url_type));
+				
+				if(!empty($row['id']))
+				{
+					$_GET[$url_field] = $row['id'];
+					$com = $com_crumb = $url_com;
+					$com_vi = $row['tenkhongdauvi'];
+					$com_en = $row['tenkhongdauen'];
+					break;
+				}
+			}
+		}
+	}
+}
+
+// Thêm "lang"=>"vi" và "lang"=>"en" vào mảng $requick_vi, $requick_en phía trên
+
+// Chỉnh lại file sitemap.php
+header("Content-Type: text/xml; charset=utf-8");
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+echo '<?xml version="1.0" encoding="UTF-8"?>';
+echo '<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.sitemaps.org/schemas/sitemap/0.9 https://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">'; 
+echo '<url><loc>'.$config_base.'</loc><lastmod>'.date('c',time()).'</lastmod><changefreq>daily</changefreq><priority>0.1</priority></url>';
+echo '<url><loc>'.$config_base.'vi/</loc><lastmod>'.date('c',time()).'</lastmod><changefreq>daily</changefreq><priority>0.1</priority></url>';
+echo '<url><loc>'.$config_base.'en/</loc><lastmod>'.date('c',time()).'</lastmod><changefreq>daily</changefreq><priority>0.1</priority></url>';
+if(!empty($requick))
+{
+	/* Sitemap VI */
+	foreach($requick_vi as $value)
+	{
+		$func->createSitemap($value['com'],$value['type'],$value['field'],$value['tbl'],"c","weekly","1",$value['lang'],"stt,id",@$value['menu']);
+	}
+
+	/* Sitemap EN */
+	foreach($requick_en as $value)
+	{
+		$func->createSitemap($value['com'],$value['type'],$value['field'],$value['tbl'],"c","weekly","1",$value['lang'],"stt,id",@$value['menu']);
+	}
+}
+echo '</urlset>';
+
+// Chỉnh lại hàm createSitemap()
+public function createSitemap($com='', $type='', $field='', $table='', $time='', $changefreq='', $priority='', $lang='vi', $orderby='', $menu=true)
+{
+	global $config_base;
+
+	$urlsm = '';
+	$sitemap = null;
+
+	if($type != '' && $table != 'photo')
+	{
+		$sitemap = $this->d->rawQuery("select tenkhongdau$lang, ngaytao from #_$table where type = ? order by $orderby desc",array($type));
+	}
+
+	if($menu == true && $field == 'id')
+	{
+		$urlsm = $config_base.$lang.'/'.$com;
+		echo '<url>';
+		echo '<loc>'.$urlsm.'</loc>';
+		echo '<lastmod>'.date('c',time()).'</lastmod>';
+		echo '<changefreq>'.$changefreq.'</changefreq>';
+		echo '<priority>'.$priority.'</priority>';
+		echo '</url>';
+	}
+
+	if($sitemap)
+	{
+		foreach($sitemap as $value)
+		{
+			$urlsm = $config_base.$lang.'/'.$value['tenkhongdau'.$lang];
+			echo '<url>';
+			echo '<loc>'.$urlsm.'</loc>';
+			echo '<lastmod>'.date('c',$value['ngaytao']).'</lastmod>';
+			echo '<changefreq>'.$changefreq.'</changefreq>';
+			echo '<priority>'.$priority.'</priority>';
+			echo '</url>';
+		}
+	}
+}
+
+// Biến $type trong Switch Case thì sử dụng biến $url_type
+$type = $url_type;
+
+// Xóa case 'ngon-ngu' và thêm case 'allpagelang' vào case 'index'
+case '':
+case 'index':
+case 'allpagelang':
+	$source = "index";
+	$template ="index/index";
+	$seo->setSeo('type','website');
+	break;
+
+// Xử lý các com tĩnh
+<?=$lang?>/<?=$func->get_comlang('san-pham',$lang)?>
+
+// Thêm $lang vào các hàm setBreadCrumbs() và hàm getBreadCrumbs() của class.BreadCrumbs.php
+Source: 
+if(!empty($title_crumb)) $breadcr->setBreadCrumbs($com_crumb,$title_crumb,$lang);
+if(!empty($pro_list)) $breadcr->setBreadCrumbs($pro_list[$sluglang],$pro_list['ten'.$lang],$lang);
+if(!empty($pro_cat)) $breadcr->setBreadCrumbs($pro_cat[$sluglang],$pro_cat['ten'.$lang],$lang);
+if(!empty($pro_item)) $breadcr->setBreadCrumbs($pro_item[$sluglang],$pro_item['ten'.$lang],$lang);
+if(!empty($pro_sub)) $breadcr->setBreadCrumbs($pro_sub[$sluglang],$pro_sub['ten'.$lang],$lang);
+$breadcr->setBreadCrumbs($row_detail[$sluglang],$row_detail['ten'.$lang],$lang);
+$breadcrumbs = $breadcr->getBreadCrumbs();
+		
+Class: 
+public function getBreadCrumbs()
+{
+	global $config_base, $lang;
+	
+	$json = array();
+	$breadcumb = '';
+
+	if($this->data)
+	{
+		$breadcumb .= '<ol class="breadcrumb">';
+		$breadcumb .= '<li class="breadcrumb-item"><a class="text-decoration-none" href="'.$config_base.$lang.'/'.'"><span>'.trangchu.'</span></a></li>';
+		$k = 1;
+		foreach($this->data as $key => $value)
+		{
+			if($value['name'] != '')
+			{
+				$langkey = (!empty($value['lang'])) ? $value['lang'].'/' : '';
+				$slug = ($value['slug']) ? $config_base.$langkey.$value['slug'] : '';
+				$name = $value['name'];
+				$active = ($key == count($this->data) - 1) ? "active" : "";
+				$breadcumb .= '<li class="breadcrumb-item '.$active.'"><a class="text-decoration-none" href="'.$slug.'"><span>'.$name.'</span></a></li>';
+				$json[] = array("@type"=>"ListItem","position"=>$k,"name"=>$name,"item"=>$slug);
+				$k++;
+			}
+		}
+	    $breadcumb .= '</ol>';
+	    $breadcumb .= '<script type="application/ld+json">{"@context": "https://schema.org","@type": "BreadcrumbList","itemListElement": '.((json_encode($json))).'}</script>';
+	}
+
+    return $breadcumb;
+}
+
+// HTML
+<a data-lang="vi">Tiếng Việt</a>
+<a data-lang="en">Tiếng Anh</a>
+
+// Thêm các biến sau trong file js.php
+var LANGKEY = '<?=$lang?>';
+var COM_VI = '<?=(!empty($com_vi)) ? $com_vi : ''?>';
+var COM_EN = '<?=(!empty($com_en)) ? $com_en : ''?>';
+
+// Thêm code xử lý lang trong file apps.js
+NN_FRAMEWORK.Lang = function(){
+    $(".menu-lang a").click(function(){
+        var lang = $(this).attr("data-lang");
+        var url = CONFIG_BASE;
+
+        if(lang == 'vi') url += lang + '/' + COM_VI;
+        else if(lang == 'en') url += lang + '/' + COM_EN;
+        if(url != '') window.location = url;
+    });
+};

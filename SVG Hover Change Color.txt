@@ -1,0 +1,14 @@
+<svg width="0" height="0">
+	<defs>
+		<filter id="color__line">
+			<feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+				values="255   0   0   0   0
+						0   255   0   0   0
+						0   0   255   0   0
+						0   0   0   1   0 "/>
+		</filter>
+	</defs>
+</svg>
+<style>
+	.item-category:hover,.item-category.active{filter:url(#color__line);}
+</style>

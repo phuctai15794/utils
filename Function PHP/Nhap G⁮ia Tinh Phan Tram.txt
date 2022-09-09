@@ -1,0 +1,25 @@
+<script type="text/javascript">
+		jQuery(document).ready(function(){
+			function roundNumber(rnum, rlength) {
+				return Math.round(rnum*Math.pow(10,rlength))/Math.pow(10,rlength);
+			}
+
+			jQuery(".gia_ban, .gia_moi").keyup(function(){
+				var gia_ban=jQuery('.gia_ban').val();
+				var gia_moi=jQuery('.gia_moi').val();
+				var gia_km=0;
+
+				if(gia_ban=='') gia_ban=0;
+				if(gia_ban=='' || gia_ban=='0' || parseInt(gia_moi) > parseInt(gia_ban))
+				{
+					gia_km=0;
+				}
+				else
+				{
+					gia_km=100-((parseInt(gia_moi) * 100) / parseInt(gia_ban));
+					gia_km=roundNumber(gia_km,0);
+				}
+				if(gia_km>0) jQuery('.gia_km').val(gia_km);
+			})
+		})
+	</script>

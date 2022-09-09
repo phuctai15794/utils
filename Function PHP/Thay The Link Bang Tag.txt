@@ -1,0 +1,27 @@
+﻿<?php
+$kw_array['bảo vệ'] = 'https://wordpress.org/plugins/seo-auto-links/screenshots/';
+$kw_array['dịch vụ bảo vệ'] = 'http://kienthuc24h.com/dat-link-lien-ket-tu-dong-theo-tu-khoa-cho-wordpress/';
+
+
+function SEOAutoLinks_process_text($text,$kw_array) {
+$maxsingle=-1;
+$reg ='/(?!(?:[^<\[]+[>\]]|[^>\]]+<\/a>))\b($name)\b/imsU';
+foreach ($kw_array as $name=>$url) {
+			
+				
+					$name = str_replace(',','|',$name);
+					
+					$replace="<a title=\"$1\" href=\"$url\">$1</a>";
+					$regexp=str_replace('$name', $name, $reg);	
+					$newtext = preg_replace($regexp, $replace, $text, $maxsingle);			
+					if ($newtext!=$text) {							
+						$links++;
+						$text=$newtext;
+                        if (!isset($urls[$url])) $urls[$url]=1; else $urls[$url]++;
+					}	
+				
+					
+		}
+		return trim( $text );
+}
+?>

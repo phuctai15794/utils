@@ -1,0 +1,165 @@
+/* Ajax */
+<?php
+	include "ajax_config.php";
+	
+	$result = array();
+	$id = (isset($_POST['id']) && $_POST['id'] > 0) ? htmlspecialchars($_POST['id']) : 0;
+
+	if($id)
+	{
+		$product = $d->rawQueryOne("select id, giashock from #_product where id = ? limit 0,1",array($id));
+
+		if(isset($product['id']) && $product['id'] > 0)
+		{
+			$cart->priceShock($product['id']);
+			$result['response'] = true;
+			$result['price'] = $func->format_money($product['giashock']);
+		}
+		else
+		{
+			$result['response'] = false;
+		}
+	}
+	else
+	{
+		$result['response'] = false;
+	}
+
+	echo json_encode($result);
+?>
+
+/* HTML */
+/* Save price share */
+public function priceShock($pid)
+{
+    $flag = false;
+
+    if(isset($_SESSION['priceshock']) && is_array($_SESSION['priceshock']))
+    {
+        if($this->priceShockExist($pid)) return false;
+        $max = count($_SESSION['priceshock']);
+        $_SESSION['priceshock'][$max]['id'] = $pid;
+        $flag = true;
+    }
+    else
+    {
+        $_SESSION['priceshock'] = array();
+        $_SESSION['priceshock'][0]['id'] = $pid;
+        $flag = true;
+    }
+
+    return $flag;
+}
+
+/* Check price share exist */
+public function priceShockExist($pid)
+{
+    $flag = false;
+
+    if(isset($_SESSION['priceshock']) && count($_SESSION['priceshock']) > 0)
+    {
+        $max = count($_SESSION['priceshock']);
+        for($i=0;$i<$max;$i++)
+        {
+            if($pid == $_SESSION['priceshock'][$i]['id'])
+            {
+                $flag = true;
+                break;
+            }
+        }
+    }
+    
+    return $flag;
+}
+<?php if($cart->priceShockExist($v['id'])) { ?>
+    <p class="product-price">
+        <span class="price-shock">Giá shock: <?=$func->format_money($v['giashock'])?></span>
+    </p>
+    <a class="product-share share-facebook transition" title="Đã chia sẻ">Đã chia sẻ</a>
+<?php } else { ?>
+    <p class="product-price">
+        <?php if($v['giamoi']) { ?>
+            <span class="price-new"><?=$func->format_money($v['giamoi'])?></span>
+            <span class="price-old">/ <?=$func->format_money($v['gia'])?></span>
+        <?php } else { ?>
+            <span class="price-new"><?=($v['gia']) ? $func->format_money($v['gia']) : lienhe?></span>
+        <?php } ?>
+    </p>
+    <a class="product-share share-facebook share-to-get-price transition" data-id="<?=$v['id']?>" data-slug="<?=$v[$sluglang]?>" title="Share để nhận giá sốc">Share để giảm giá</a>
+<?php } ?>
+
+/* Js */
+NN_FRAMEWORK.ShareGetPrice = function(){
+    $("body").on("click",".share-to-get-price",function(){
+        $this = $(this);
+        var id = $this.attr('data-id');
+        var slug = $this.attr('data-slug');
+        var area = $this.attr('data-area');
+
+        if(id && slug)
+        {
+            holdonOpen("sk-rect","Vui lòng chờ...","rgba(0,0,0,0.9)","white");
+            setTimeout(function(){
+                holdonClose();
+                FB.init({
+                    appId: APPID,
+                    version: 'v2.6'
+                });
+
+                FB.ui({
+                    display: 'popup',
+                    method: 'share',
+                    href: CONFIG_BASE + slug,
+                }, function(response){
+                    if(response)
+                    {
+                        $.ajax({
+                            url:'ajax/ajax_share.php',
+                            type: "POST",
+                            dataType: 'html',
+                            async: false,
+                            data: {id:id},
+                            success: function(result){
+                                result = JSON.parse(result);
+                                if(result.response == true)
+                                {
+                                    modalNotify('Chia sẻ thành công');
+                                    if(area == 'detail')
+                                    {
+                                        $this.parents('li').find('.attr-label-pro-detail').html('Giá Shock:');
+                                        $this.parents('li').find('.attr-content-pro-detail').html('<span class="price-new-pro-detail">'+result.price+'</span>');
+                                        $this.remove();
+                                    }
+                                    else
+                                    {
+                                        $this.removeAttr('data-id');
+                                        $this.removeAttr('data-slug');
+                                        $this.attr('title','Đã chia sẻ');
+                                        $this.html('Đã chia sẻ');
+                                        $this.parents('.product-frame').find('.product-price').html('<span class="price-shock">Giá shock: '+result.price+'</span>');
+                                    }
+                                    return false;
+                                }
+                                else
+                                {
+                                    modalNotify('Dữ liệu không hợp lệ. Vui lòng thử lại sau');
+                                    return false;
+                                }
+                            }
+                        });
+                    }
+                    else
+                    {
+                        modalNotify('Chia sẻ thất bại');
+                        return false;
+                    }
+                    return false;
+                });
+            },2500);
+        }
+        else
+        {
+            return false;
+        }
+    });
+};

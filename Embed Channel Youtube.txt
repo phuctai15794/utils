@@ -1,0 +1,2 @@
+<script src="https://apis.google.com/js/platform.js"></script>
+<div class="g-ytsubscribe" data-channelid="<?=$optsetting['channel-youtube']?>" data-layout="full" data-theme="default" data-count="default"></div>

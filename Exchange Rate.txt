@@ -1,0 +1,60 @@
+/* Exchange Rate */
+$exchangeRate = $func->exchangeRate();
+
+/* Exchange Rate XML */
+    public function exchangeRate()
+    {
+        /* URL online xml */
+        $onlineURL = 'https://vietcombank.com.vn/ExchangeRates/ExrateXML.aspx';
+
+        /* Create and get xml content */
+        $localName = date('d-m-Y', time());
+        $localURL = './caches/ExchangeRates-' . $localName . '.xml';
+        $isFileExist = file_exists($localURL);
+        $content = $isFileExist ? file_get_contents($localURL) : '';
+        $isCreate = !$isFileExist || strlen($content) === 3 || empty(trim($content));
+
+        if ($isCreate) {
+            $content = file_get_contents($onlineURL);
+            copy($onlineURL, $localURL);
+        }
+
+        /* Delete file xml old */
+        $localNameOld = date('d-m-Y', strtotime("-1 days"));
+        $localURLOld = './caches/ExchangeRates-' . $localNameOld . '.xml';
+        if (file_exists($localURLOld)) {
+            unlink($localURLOld);
+        }
+
+        /* Generate xml content */
+        if (!empty($content) && preg_match_all('/Exrate CurrencyCode="(.*)" CurrencyName="(.*)" Buy="(.*)" Transfer="(.*)" Sell="(.*)"/', $content, $matches) && count($matches) > 0) {
+            $exchangeRates = [
+                'USD' => [],
+                'EUR' => [],
+                'AUD' => [],
+                'JPY' => [],
+                'GBP' => [],
+                // 'HKD' => [],
+                // 'CHF' => [],
+                // 'CAD' => [],
+                // 'SGD' => [],
+                // 'THB' => []
+            ];
+
+            foreach ($matches[1] as $k => $v) {
+                if (isset($exchangeRates[$v])) {
+                    $exchangeRates[$v] = [
+                        'id' => $v,
+                        'name' => $matches[2][$k],
+                        'buy' => $matches[3][$k],
+                        'transfer' => $matches[4][$k],
+                        'sell' => $matches[5][$k]
+                    ];
+                }
+            }
+
+            return $exchangeRates;
+        }
+
+        return [];
+    }

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chỉ đường</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+	<style type="text/css">
+		#map
+		{
+			height: 500px;
+			margin: 15px auto;
+		}
+		#directionsPanel
+		{
+			display: none;
+		}
+		input.btn-map
+		{
+		    border: 0px;
+		    width: 100px;
+		    height: 30px;
+		    background: #338efc;
+		    color: white;
+		    border-radius: 3px;
+		    cursor: pointer;
+		    outline: none;
+		}
+		input.txt-map
+		{
+		    height: 30px;
+		    width: 400px;
+		    text-indent: 10px;
+		    border: 1px solid;
+		    border-color: #2d8bfc;
+		    border-radius: 3px;
+		    outline: none;
+		}
+	</style>
+
+	<input id="start" class="txt-map" type="text" placeholder="Nhập địa chỉ vào đây" />
+    <input type="button" class="btn-map" onclick="calcRoute();" value="Tìm đường đi" />
+    <div id="map"></div>
+    <span>Kéo đường màu xanh trên bản đồ để thay đổi tuyến đường</span>
+    <div id="directionsPanel"></div>
+
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&key=AIzaSyCSaOkH3-RuO5G5au4guUxausk2-w1d_mA"></script>
+	<script>
+		var map, infoWindow;
+		var rendererOptions = { draggable: true };
+		var directionsDisplay;
+		var directionsService = new google.maps.DirectionsService();
+		var endAddress = "10.776462, 106.672095"; // "<?=$row_setting['toado']?>"
+
+		window.onload = function () 
+		{
+		    directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);
+
+		    var options = {
+		        zoom: 16,
+		        center: new google.maps.LatLng(10.776462, 106.672095), // <?=$row_setting['toado']?>
+		        mapTypeId: google.maps.MapTypeId.ROADMAP
+		    };
+
+		    map = new google.maps.Map(document.getElementById('map'), options);
+
+		    var marker = new google.maps.Marker({
+		        position: new google.maps.LatLng(10.776462, 106.672095), // <?=$row_setting['toado']?>
+		        map: map,
+		        title: 'Click me'
+		    });
+
+		    google.maps.event.addListener(marker, 'click', function () {
+		        if (!infoWindow) {
+		            infoWindow = new google.maps.InfoWindow();
+		        }
+		 
+		        var content = '<div class="diachi">Địa chỉ: 26 Hoàng Dư Khương, P.12, Q.10, TP.HCM</div>'; 
+		        // <?=$row_setting['diachi']?>
+
+		        infoWindow.setContent(content);
+
+		        infoWindow.open(map, marker);
+		    });
+
+		    google.maps.event.trigger(marker, 'click');
+
+		    directionsDisplay.setMap(map);
+		    directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+		};
+
+		function calcRoute() 
+		{
+		    var start = document.getElementById("start").value;
+		    var end = endAddress;
+		    var request = {
+		        origin: start,
+		        destination: end,
+		        travelMode: google.maps.DirectionsTravelMode.WALKING
+		    };
+		    directionsService.route(request, function (response, status) {
+		        if (status == google.maps.DirectionsStatus.OK) {
+		            directionsDisplay.setDirections(response);
+		        }
+		    });
+		}
+	</script>
+</body>
+</html>

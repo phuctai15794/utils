@@ -1,0 +1,85 @@
+/* Ajax */
+<?php
+    include "config.php";
+
+    $id = (!empty($_POST['id'])) ? htmlspecialchars($_POST['id']) : 0;
+    $result = '';
+    $album = $d->rawQuery("select id, name$lang, photo from #_gallery where id_parent = ? and com='product' and type = ? and kind='man' and val = ? and find_in_set('hienthi',status) order by numb,id desc", array($id, 'thu-vien-anh',  'thu-vien-anh'));
+
+    if (!empty($album)) {
+        foreach ($album as $k => $v) {
+            $result .= '<a rel="album-gallery" data-id="' . $v['id'] . '" href="' . ASSET . UPLOAD_PRODUCT_L . $v['photo'] . '" title="' . $v['name' . $lang] . '">';
+            $result .= $func->getImage(['isLazy' => false, 'sizes' => '100x80x1', 'upload' => UPLOAD_PRODUCT_L, 'image' => $v['photo'], 'alt' => $v['name' . $lang]]);
+            $result .= '</a>';
+        }
+    }
+
+    echo $result;
+?>
+
+/* Js */
+NN_FRAMEWORK.Album = function () {
+    $('body').on('click', '.album-home', function () {
+        var id = $(this).data('id');
+
+        if (id) {
+            if (!isExist($('body').find('.gallery-album'))) {
+                $('body').append(
+                    $('<div>', {
+                        class: 'gallery-album d-none'
+                    })
+                );
+            }
+
+            $.ajax({
+                url: 'api/album.php',
+                type: 'POST',
+                dataType: 'html',
+                async: false,
+                data: {
+                    id: id
+                },
+                beforeSend: function () {
+                    holdonOpen();
+                }
+            }).done(function (result) {
+                if (result) {
+                    $('.gallery-album').html(result);
+                    $('.gallery-album').photobox('a', {
+                        thumbs: true,
+                        loop: false,
+                        history: false,
+                        beforeShow: function () {
+                            var pbThumbs = $('#pbOverlay').find('#pbCaption').find('.pbThumbs');
+                            var thumb = `<ul>`;
+
+                            $(result).each(function (index) {
+                                $this = $(this);
+                                thumb += `<li class="${$this.attr('rel')}">`;
+                                thumb += `<a href="${$this.attr('href')}">`;
+                                thumb += `<img src="${$this.find('img').attr('src')}" alt="" title="${$this.attr(
+                                    'title'
+                                )}">`;
+                                thumb += `</a>`;
+                                thumb += `</li>`;
+                            });
+
+                            thumb += `</ul>`;
+                            pbThumbs.html(thumb);
+                        },
+                        afterClose: function () {
+                            $('.gallery-album').remove();
+                            $('.gallery-album').photobox('destroy');
+                        }
+                    });
+
+                    if (isExist($('.gallery-album a:first-child'))) {
+                        $('.gallery-album a:first-child').trigger('click');
+                    }
+                }
+
+                holdonClose();
+            });
+        }
+    });
+};

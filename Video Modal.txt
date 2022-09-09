@@ -1,0 +1,87 @@
+/* CSS */
+#modal-video .modal-title { font-weight: 700; font-size: 16px; text-transform: capitalize; }
+#modal-video .modal-body { padding: 0px; }
+#modal-video .modal-body .video-iframe { position: relative; height: 450px; }
+#modal-video .modal-body .video-iframe iframe { position: absolute !important; width: 100% !important; height: 100% !important; top: 0px !important; left: 0px !important; }
+
+/* HTML */
+class="show-video" data-label="<?= $videoFeatured['name' . $lang] ?>" data-video="<?= $func->getYoutube($videoFeatured['link_video']) ?>"
+
+/* Modal video */
+<div class="modal fade" id="modal-video" tabindex="-1" role="dialog" aria-labelledby="modal-video-label" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modal-video-label"></div>
+                <div class="modal-close" data-dismiss="modal">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#333333" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </div>
+            </div>
+            <div class="modal-body"></div>
+        </div>
+    </div>
+</div>
+
+/* Video */
+NN_FRAMEWORK.Video = function () {
+    if (isExist($('.intro-video'))) {
+        if (isExist($('.show-video'))) {
+            $('body').on('click', '.show-video', function () {
+                var label = $(this).attr('data-label');
+                var video = $(this).attr('data-video');
+
+                if (label && video) {
+                    var iframe =
+                        '<div class="video-iframe"><iframe src="https://www.youtube.com/embed/' +
+                        video +
+                        '?&autoplay=1" frameborder="0" allow="accelerometer; autoplay; fullscreen"></iframe></div>';
+
+                    $('#modal-video').find('.modal-title').html(label);
+                    $('#modal-video').find('.modal-body').html(iframe);
+                    $('#modal-video').modal('show');
+                    $('#modal-video').on('hidden.bs.modal', function (e) {
+                        $('#modal-video').find('.modal-title').html('');
+                        $('#modal-video').find('.modal-body').html('');
+                    });
+                } else {
+                    notifyDialog('Dữ liệu không hợp lệ');
+                }
+
+                return false;
+            });
+        }
+
+        if (isExist($('.video-list'))) {
+            $('.video-ticker')
+                .easyTicker({
+                    direction: 'up',
+                    easing: 'swing',
+                    speed: 'slow',
+                    interval: 3500,
+                    height: 'auto',
+                    visible: 2,
+                    mousePause: true,
+                    controls: {
+                        up: '.video-control#up',
+                        down: '.video-control#down'
+                        // toggle: '.toggle',
+                        // stopText: 'Stop'
+                    },
+                    callbacks: {
+                        before: function (ul, li) {
+                            // console.log(this, ul, li);
+                            // $(li).css('color', 'red');
+                        },
+                        after: function (ul, li) {
+                            // console.log(this, ul, li);
+                        }
+                    }
+                })
+                .data('easyTicker');
+        }
+    }
+};

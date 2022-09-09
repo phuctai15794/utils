@@ -1,0 +1,16 @@
+<?php
+    $properties = nl2br($this->decodeHtmlChars($params['data']['properties' . $params['lang']]));
+    $properties = !empty($properties) ? explode('<br />', $properties) : [];
+    
+    if (!empty($properties)) {
+        foreach ($properties as $k => $v) {
+            $props = strstr($v, ':') !== false ? explode(":", $v) : $v;
+            if (is_array($props)) {
+                echo '<span>' . $props[0] . ':</span>';
+                echo '<strong>' . $props[1] . '</strong>';
+            } else {
+                echo '<span>' . $props . ':</span>';
+            }
+        }
+    }
+?>

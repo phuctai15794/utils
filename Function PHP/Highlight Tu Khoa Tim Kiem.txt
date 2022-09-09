@@ -1,0 +1,36 @@
+﻿<?php
+
+/**
+ * @highlight words
+ *
+ * @param string $text
+ *
+ * @param array $words
+ *
+ * @return string
+ *
+ */
+function highlightWords($text, $words)
+{
+        /*** loop of the array of words ***/
+        foreach ($words as $word)
+        {
+                /*** quote the text for regex ***/
+                $word = preg_quote($word);
+                /*** highlight the words ***/
+                //$text = preg_replace("/\b($word)\b/i", '<span class="highlight_word">\1</span>', $text);
+                $text = preg_replace("|($word)|Uui", "<span class=\"highlight_word\">$1</span>", $text);
+        }
+        /*** return the text ***/
+        return $text;
+}
+
+
+/*** example usage ***/
+$string = 'Nội dung chứa từ khóa cần tìm kiếm';
+/*** an array of words to highlight ***/
+$words = array('từ khóa');
+/*** highlight the words ***/
+$string =  highlightWords($string, $words);
+
+?>
