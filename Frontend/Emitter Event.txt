@@ -1,0 +1,27 @@
+// File Emitter.js
+import EventEmitter from 'events';
+
+const emitter = new EventEmitter();
+emitter.setMaxListeners(0);
+
+export default emitter;
+
+// Import Emitter
+import Emiiter from './utils';
+
+// Parent Component
+Emitter.emit('CLOSE_MODAL_BOOKING', {
+    id: 'Your ID'
+});
+
+// Child Component
+constructor(props) {
+    super(props);
+    this.listenToEmitter();
+}
+
+listenToEmitter = () => {
+    Emitter.on('CLOSE_MODAL_BOOKING', (data) => {
+        console.log(data);
+    });
+};
