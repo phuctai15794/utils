@@ -1,0 +1,32 @@
+/* WordCount */
+<style>
+    .word-counter {
+        text-align: right;
+        margin-top: 0.375rem;
+        font-size: 15px;
+    }
+</style>
+
+$('input[name="title"], textarea[name="description"]').each(function() {
+    let _this = $(this);
+    let formRow = _this.parents('.formRight');
+    let nodeName = _this[0].nodeName;
+    let textField = formRow.find(nodeName.toLowerCase());
+    let lenText = _this[0].value?.length;
+    let counterHtml = `<div class="word-counter"><span>${lenText}</span>/<span>{{max}}</span></div>`;
+
+    if (nodeName === 'INPUT') {
+        counterHtml = counterHtml.replace('{{max}}', 70);
+    } else if (nodeName === 'TEXTAREA') {
+        counterHtml = counterHtml.replace('{{max}}', 300);
+    }
+
+    $(counterHtml).insertAfter(textField);
+});
+$('input[name="title"], textarea[name="description"]').keyup(function() {
+    let _this = $(this);
+    let formRow = _this.parents('.formRight');
+    let lenText = _this[0].value?.length;
+
+    formRow.find('.word-counter span:first-of-type').text(lenText);
+});
