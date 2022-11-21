@@ -5,7 +5,7 @@ $exchangeRate = $func->exchangeRate();
     public function exchangeRate()
     {
         /* URL online xml */
-        $onlineURL = 'https://vietcombank.com.vn/ExchangeRates/ExrateXML.aspx';
+        $onlineURL = 'https://portal.vietcombank.com.vn/Usercontrols/TVPortal.TyGia/pXML.aspx';
 
         /* Create and get xml content */
         $localName = date('d-m-Y', time());
