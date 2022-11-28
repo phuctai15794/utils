@@ -17,7 +17,7 @@ pattern="^(?!00?\.00$)\d{1,2}(?:\.\d{1,2})?$" step="0.01"
 + Pattern 0.00
 pattern="[0-9]+([\.,][0-9]+)?" step="0.01"
 
-+ Responsive Table CSS:
++ Responsive Table CSS
 .content table{overflow-y:hidden;overflow-x:auto;width:100%!important;display:block;}
 .content table tbody{min-width:1200px;display:inline-table;}
 
