@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<FileZilla3 version="3.62.0" platform="windows">
+<FileZilla3 version="3.62.2" platform="windows">
 	<Servers>
 		<Server>
 			<Host>120.72.119.26</Host>
@@ -14361,18 +14361,16 @@ http://www.nemvietthanh.vn:2222</Comments>
 				<Protocol>6</Protocol>
 				<Type>0</Type>
 				<User>nhakhoalon</User>
-				<Pass encoding="base64">eTJxSGNKSUc=</Pass>
+				<Pass encoding="base64">ODhrN1A3ZE4=</Pass>
 				<Logontype>1</Logontype>
 				<PasvMode>MODE_DEFAULT</PasvMode>
 				<EncodingType>Auto</EncodingType>
 				<BypassProxy>0</BypassProxy>
 				<Name>nhakhoalongan.vn</Name>
 				<Comments>Username:    nhakhoalon
-Password:    y2qHcJIG
+Password:    88k7P7dN
 Domain:        nhakhoalongan.vn
-
 http://103.7.40.239:2222
-
 http://www.nhakhoalongan.vn:2222</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
@@ -18322,6 +18320,31 @@ Password	2yU37U80vfOHGuGvII2b</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>115.84.183.204</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nn00787522</User>
+				<Pass encoding="base64">TUF2U0h5ZlA5REYwS01TelZV</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>bulongduckhang.com</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền bulongduckhang.com
+Domain	bulongduckhang.com
+Control panel	http://115.84.183.204:1111 hay http://bulongduckhang.com:1111
+Username	nn00787522
+Password	MAvSHyfP9DF0KMSzVU
+Thông Tin Tài Khoản FTP
+Host name	115.84.183.204
+Username	nn00787522
+Password	MAvSHyfP9DF0KMSzVU</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>210.211.108.104</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -18514,6 +18537,31 @@ Password	ccWekfvw20Yn</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>210.211.118.238</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nn01881922</User>
+				<Pass encoding="base64">VDhlTmdLeHNmM0NyaEQyd1Iweg==</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>ciriladiamond.com</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền ciriladiamond.com
+Domain	ciriladiamond.com
+Control panel	http://210.211.118.238:1111 hay http://ciriladiamond.com:1111
+Username	nn01881922
+Password	T8eNgKxsf3CrhD2wR0z
+Thông Tin Tài Khoản FTP
+Host name	210.211.118.238
+Username	nn01881922
+Password	T8eNgKxsf3CrhD2wR0z</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>116.193.69.142</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -18536,6 +18584,32 @@ Thông Tin Tài Khoản FTP
 Host name	116.193.69.142
 Username	nn02120021
 Password	SfDLQ28NJtx8</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>210.211.109.6</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nn02888520</User>
+				<Pass encoding="base64">cloyRFB3ZnVKMDZx</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>cokhinguyenminh.com</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền cokhinguyenminh.com
+Domain	cokhinguyenminh.com
+P: cokhinguyenminh.com.vn
+Control panel	http://210.211.109.6:1111 hay http://cokhinguyenminh.com:1111
+Username	nn02888520
+Password	rZ2DPwfuJ06q
+Thông Tin Tài Khoản FTP
+Host name	210.211.109.6
+Username	nn02888520
+Password	rZ2DPwfuJ06q</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -19658,6 +19732,49 @@ Password	mw6LdBY52KEvEfU</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>210.2.87.26</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nn00137621</User>
+				<Pass encoding="base64">aHJwU1JrdjBlWG96cXFKd0tqUA==</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>fsis.org.vn - new</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền fsis.org.vn
+Control panel	http://210.2.87.26:1111 hay http://fsis.org.vn:1111
+Username	nn00137621
+Password	hrpSRkv0eXozqqJwKjP
+Thông Tin Tài Khoản FTP
+Host name	ftp.fsis.org.vn hoặc 210.2.87.26
+Username	nn00137621
+Password	hrpSRkv0eXozqqJwKjP</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>112.78.2.23</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>test</User>
+				<Pass encoding="base64">NXQ4ajZqRiMw</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>fsis.org.vn - old</Name>
+				<Comments>112.78.2.23
+
+User: test
+Pass: 5t8j6jF#0</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>210.2.87.28</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -19822,6 +19939,34 @@ Password	aiUwDEShZ2JZ</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>115.84.183.223</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>danvystore</User>
+				<Pass encoding="base64">bnZSYU11bVBWc0Z2</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>giatreotivi.net</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền giatreotivi.net
+Domain	giatreotivi.net
+P: danvystore.com
+P: dthmiennam.com
+P: lapgiatreotivi247.com
+Control panel	http://115.84.183.223:1111 hay http://giatreotivi.net:1111
+Username	danvystore
+Password	nvRaMumPVsFv
+Thông Tin Tài Khoản FTP
+Host name	115.84.183.223
+Username	danvystore
+Password	nvRaMumPVsFv</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>112.213.89.162</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -19883,6 +20028,32 @@ Password	TvZPpLEV2</Comments>
 				<Comments>http://115.84.183.203:1111
 Username: nn01167320
 Password: SXnRleNYjMR</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>210.211.108.104</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nn01257122</User>
+				<Pass encoding="base64">R01NS1ZqUlU0UUhlMmhzdlh6U2s=</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>goldbeauty.vn</Name>
+				<Comments>
+Thông Tin Hosting Control Panel
+Hosting cho tên miền goldbeauty.vn
+Domain	goldbeauty.vn
+Control panel	http://210.211.108.104:1111 hay http://goldbeauty.vn:1111
+Username	nn01257122
+Password	GMMKVjRU4QHe2hsvXzSk
+Thông Tin Tài Khoản FTP
+Host name	210.211.108.104
+Username	nn01257122
+Password	GMMKVjRU4QHe2hsvXzSk</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -20057,6 +20228,32 @@ K8403xHSjIg</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>210.211.121.149</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>hoachatvnc</User>
+				<Pass encoding="base64">QTBkTk4xVTNlajI=</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>hoachatvn.com.vn</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền hoachatvn.com.vn
+Domain	hoachatvn.com.vn
+P: hoachatthiendaiphuc.com.vn
+Control panel	http://210.211.121.149:1111 hay http://hoachatvn.com.vn:1111
+Username	hoachatvnc
+Password	A0dNN1U3ej2
+Thông Tin Tài Khoản FTP
+Host name	210.211.121.149
+Username	hoachatvnc
+Password	A0dNN1U3ej2</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>120.72.119.27</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -20139,6 +20336,33 @@ Thông Tin Tài Khoản FTP
 Host name	116.193.69.140
 Username	nn02591620
 Password	NV6L9MKdtZaE1vGWj4M</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>116.193.69.138</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>hoatuoilet</User>
+				<Pass encoding="base64">b3c0M0FFOG5GOThC</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>hoatuoilethuy.com</Name>
+				<Comments>
+Thông Tin Hosting Control Panel
+Hosting cho tên miền hoatuoilethuy.com
+Domain	hoatuoilethuy.com
+hoatuoilongan.net
+Control panel	http://116.193.69.138:1111 hay http://hoatuoilethuy.com:1111
+Username	hoatuoilet
+Password	ow43AE8nF98B
+Thông Tin Tài Khoản FTP
+Host name	116.193.69.138
+Username	hoatuoilet
+Password	ow43AE8nF98B</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -20749,6 +20973,34 @@ Password	g9BK8qz632fr</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>120.72.119.28</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>vancongng</User>
+				<Pass encoding="base64">bXBSZENtWVFXVXg3</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>kythuatphucminh.com</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền kythuatphucminh.com
+Domain	kythuatphucminh.com
+P: vancongnghiep.online
+P: vankitz.com
+P: vinvalves.com
+Control panel	http://120.72.119.28:1111 hay http://kythuatphucminh.com:1111
+Username	vancongng
+Password	mpRdCmYQWUx7
+Thông Tin Tài Khoản FTP
+Host name	120.72.119.28
+Username	vancongng
+Password	mpRdCmYQWUx7</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>210.211.108.101</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -21349,6 +21601,31 @@ Password
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>210.211.108.81</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>maymacphon</User>
+				<Pass encoding="base64">Z2txSzJHZ2prelZZ</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>maymacphongphu.com</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền maymacphongphu.com
+Domain	maymacphongphu.com
+Control panel	http://210.211.108.81:1111 hay http://maymacphongphu.com:1111
+Username	maymacphon
+Password	gkqK2GgjkzVY
+Thông Tin Tài Khoản FTP
+Host name	210.211.108.81
+Username	maymacphon
+Password	gkqK2GgjkzVY</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>115.84.183.224</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -21369,6 +21646,31 @@ Thông Tin Tài Khoản FTP
 Host name	ftp.maynenkhisumiko.com hoặc 115.84.183.224
 Username	nn00548822
 Password	9qdZsWGB3z9kojFd4Zx</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>210.2.87.27</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>mayxaykeo</User>
+				<Pass encoding="base64">ZWp5NGNyREZ2RFV6</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>mayxaykeo.com</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền mayxaykeo.com
+Domain	mayxaykeo.com
+Control panel	http://210.2.87.27:1111 hay http://mayxaykeo.com:1111
+Username	mayxaykeo
+Password	ejy4crDFvDUz
+Thông Tin Tài Khoản FTP
+Host name	210.2.87.27
+Username	mayxaykeo
+Password	ejy4crDFvDUz</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -21737,6 +22039,36 @@ Thông Tin Tài Khoản FTP
 Host name	ftp.nemphamthanh.com hoặc 120.72.119.9
 Username	nemphamtha
 Password	RW1uSUPto2pN</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>120.72.119.1</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>newdaytour</User>
+				<Pass encoding="base64">NVQ1dTgwRVNzYlEx</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>newdaytourism.com.vn</Name>
+				<Comments>
+Thông Tin Hosting Control Panel
+Hosting cho tên miền newdaytourism.com.vn
+Domain	newdaytourism.com.vn
+P: dulichngaymoi.net
+P: vemaybayngaymoi.com
+P: verevietjetstar.com
+P: vietjetngaymoi.com
+Control panel	http://120.72.119.1:1111 hay http://newdaytourism.com.vn:1111
+Username	newdaytour
+Password	5T5u80ESsbQ1
+Thông Tin Tài Khoản FTP
+Host name	120.72.119.1
+Username	newdaytour
+Password	5T5u80ESsbQ1</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -22352,6 +22684,32 @@ PUakWXFRkUnr7y8QWWWW</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>115.84.183.223</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nn00666822</User>
+				<Pass encoding="base64">M0pudVlCS2NrNFRaSEVmN29hWEY=</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>ototaianphuoc.com</Name>
+				<Comments>
+Thông Tin Hosting Control Panel
+Hosting cho tên miền ototaianphuoc.com
+Domain	ototaianphuoc.com
+Control panel	http://115.84.183.223:1111 hay http://ototaianphuoc.com:1111
+Username	nn00666822
+Password	3JnuYBKck4TZHEf7oaXF
+Thông Tin Tài Khoản FTP
+Host name	115.84.183.223
+Username	nn00666822
+Password	3JnuYBKck4TZHEf7oaXF</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>120.72.119.4</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -22698,6 +23056,37 @@ Thông Tin Tài Khoản FTP
 Host name	116.193.69.141
 Username	nn01683921
 Password	tY9CePKUGspk</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>210.211.108.100</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>bdstrungsa</User>
+				<Pass encoding="base64">TGhKY1BzdkVCS1U=</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>quangcao.store</Name>
+				<Comments>Thông Tin Hosting Control Panel
+Hosting cho tên miền quangcao.store
+Domain	bdstrungsaigon.com
+P: bdstrungsaigon.com.vn
+P: bdstrungsaigon.vn
+P: onlinebatdongsan.com
+P: quangcaobatdongsan.com.vn
+quangcao.store
+P: raovat.quangcaobatdongsan.com.vn
+Control panel	http://210.211.108.100:1111 hay http://quangcao.store:1111
+Username	bdstrungsa
+Password	LhJcPsvEBKU
+Thông Tin Tài Khoản FTP
+Host name	210.211.108.100
+Username	bdstrungsa
+Password	LhJcPsvEBKU</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -23481,6 +23870,33 @@ Thông Tin Tài Khoản FTP
 Host name	ftp.thaibinhxaydung.com hoặc 116.193.69.132
 Username	thaibinhxa
 Password	BGorOq5U</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>120.72.119.5</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>thaidpaint</User>
+				<Pass encoding="base64">U0dtYzY4NVg0YWRv</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>thaiduongpaint.vn</Name>
+				<Comments>
+Thông Tin Hosting Control Panel
+Hosting cho tên miền thaiduongpaint.vn
+Domain	thaiduongpaint.vn
+P: nesty.com.vn
+Control panel	http://120.72.119.5:1111 hay http://thaiduongpaint.vn:1111
+Username	thaidpaint
+Password	SGmc685X4ado
+Thông Tin Tài Khoản FTP
+Host name	120.72.119.5
+Username	thaidpaint
+Password	SGmc685X4ado</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -24416,6 +24832,23 @@ Thông Tin Tài Khoản FTP
 Host name	210.2.64.71
 Username	tqharchite
 Password	fHFe1wXUt7q1</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
+				<Host>103.57.222.17</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>nina@traidongvathoangdanguyencuong.com</User>
+				<Pass encoding="base64">dyo/Q1JHU1kyaXda</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>traidongvathoangdanguyencuong.com</Name>
+				<Comments>User: nina@traidongvathoangdanguyencuong.com
+Pass: w*?CRGSY2iwZ</Comments>
 				<SyncBrowsing>0</SyncBrowsing>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
@@ -30108,40 +30541,40 @@ Password	UY4eOhNpL</Comments>
 		<Setting name="Local filelist colwidths">241 80 120 120</Setting>
 		<Setting name="Remote filelist colwidths">265 75 80 131 80 85</Setting>
 		<Setting name="Persistent Choices">3</Setting>
-		<Setting name="Greeting version">3.62.0</Setting>
-		<Setting name="Greeting resources" />
-		<Setting name="Last automatic update version">3.62.0</Setting>
 		<Setting name="Site Manager position">0 170 32 1084 756 </Setting>
 		<Setting name="Queue column widths">160 60 229 80 60 150</Setting>
-		<Setting name="Window position and size">1 242 80 1002 539 </Setting>
-		<Setting name="Splitter positions (v2)">50 -84 495138888 171 171 500000000</Setting>
-		<Setting name="Last automatic update check">2022-11-10 09:52:31</Setting>
-		<Setting name="Update Check New Version" platform="win">nightly 2022-11-09 https://filezilla-project.org/nightlies/2022-11-09/win64/FileZilla_3_setup.exe 12310280 sha512 2d827d4b2e085b650c85c00d41e1cc9d8ad07398a53fe79bf548dbb3bdce2e2c01573fd2a6d1acd5f1a830586f1f073584bfea2f32291b81646444ad2b6890db sig:nsCSIiGP+SzFjy2w83rEQ7eDbetrFq61XdOpUmlu0y+EoQUTSd2Gy4MlSc1nRz+2If82F0IPLQnEvklIp+6iCg
-release 3.60.2 https://dl4.cdn.filezilla-project.org/FileZilla_3.60.2_win64-setup.exe 11847936 sha512 b532c9e82016dedbc04714ed659f459d1e87db926f4eed6eef5ff7daba450f91ea1558e247c87a7727c9cf8ec96d7cee3a6cd5159e7dc0ccd28ceb87f05e722a sig:fs3g+im02LEgN/kRpY8iVwt/xcfCfcwUB172qOqkqJL4CdY/FSvHtVA9XfGE5jeO6khKlw410pfYjrsk3IkVCw
-nightly 2022-11-10 https://filezilla-project.org/nightlies/2022-11-10/win64/FileZilla_3_setup.exe 12308656 sha512 dd7e65b4259f5eef4a0d8124f0753a5a8757931299296c5458c426b89fbd3375e429a3d25726324ef2fa1866bc5cac76408216ee926cede1dcbc9b5bf6e83bc2 sig:LORJNsyzPnOsxuAnM/4G8/ZBCCfbwgEw4nqCVvNNqRlTjFM6NzWwCALu1hkK1LoJ4rPmZLpg96eGwGYAEgSMAg
-release 3.62.0 https://dl1.cdn.filezilla-project.org/FileZilla_3.62.0_win64-setup.exe 11901840 sha512 ad6662d507930888ab8cb4395657b46973d8b93d780b7d56ec505af77e519b4d8e67ea14ff16acc851b0e0e12a341f7b04fd8ec9ab7497401f469f6822f80efc sig:hULi0ZvjSFBExVxYTVUo+lO0R4VBrX+9WTcmvcGCxZznVjLHVuxJv51B81ZYScXr6bzMqDlSniO8yBVLhAlXAQ
+		<Setting name="Window position and size">1 223 73 900 524 </Setting>
+		<Setting name="Splitter positions (v2)">50 -84 494444444 171 171 500000000</Setting>
+		<Setting name="Greeting version">3.62.2</Setting>
+		<Setting name="Greeting resources" />
+		<Setting name="Last automatic update version">3.62.2</Setting>
+		<Setting name="Last automatic update check">2022-11-28 00:39:26</Setting>
+		<Setting name="Update Check New Version" platform="win">nightly 2022-11-27 https://filezilla-project.org/nightlies/2022-11-27/win64/FileZilla_3_setup.exe 12313000 sha512 e97c5a317156db65dcb7b1865a6c1a7506f0f7e06cc07450907c582abbea146f62aefc1e469d324ee9a34354c804f2fc2179d0d94bd5f0cef2ac61ba87fdbb5a sig:rbsESwT4IHThzdqMiPD6GArXxhBMOQl1oYOoN3oZ+BWsyQNRjqew0W4xP+gSNhE+ukWpcf72No4l7Si+OqOlAQ
+release 3.60.2 https://dl1.cdn.filezilla-project.org/FileZilla_3.60.2_win64-setup.exe 11847936 sha512 b532c9e82016dedbc04714ed659f459d1e87db926f4eed6eef5ff7daba450f91ea1558e247c87a7727c9cf8ec96d7cee3a6cd5159e7dc0ccd28ceb87f05e722a sig:fs3g+im02LEgN/kRpY8iVwt/xcfCfcwUB172qOqkqJL4CdY/FSvHtVA9XfGE5jeO6khKlw410pfYjrsk3IkVCw
+nightly 2022-11-27 https://filezilla-project.org/nightlies/2022-11-27/win64/FileZilla_3_setup.exe 12313000 sha512 e97c5a317156db65dcb7b1865a6c1a7506f0f7e06cc07450907c582abbea146f62aefc1e469d324ee9a34354c804f2fc2179d0d94bd5f0cef2ac61ba87fdbb5a sig:rbsESwT4IHThzdqMiPD6GArXxhBMOQl1oYOoN3oZ+BWsyQNRjqew0W4xP+gSNhE+ukWpcf72No4l7Si+OqOlAQ
+release 3.62.2 https://dl3.cdn.filezilla-project.org/FileZilla_3.62.2_win64-setup.exe 11905648 sha512 9596496e8200bb8d314503ddad973304a48461b8dcb052912d5d068d3877172ee1d57f53556b3807cd6df4c875babf1393f9a2b2bd1c8e6a9d9b37ba971ee656 sig:6DNMmysdug6EEKdEK5P3d8UIqgFH+LntZ3JTlKlfpVZEN4N2yN0PLQxYNtUOLNIFAxiz/eX9gw9enJe2WwgcCg
 </Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
 				<Tab connected="1" selected="1">
-					<Host>210.211.109.5</Host>
+					<Host>210.2.64.70</Host>
 					<Port>21</Port>
 					<Protocol>6</Protocol>
 					<Type>0</Type>
-					<User>nn03147120</User>
-					<Pass encoding="base64">N0lTU1VFVEhtTDJja24ycFFhVg==</Pass>
+					<User>demo18</User>
+					<Pass encoding="base64">cGh1Y3RhaTE1Nzk0</Pass>
 					<Logontype>1</Logontype>
 					<PasvMode>MODE_DEFAULT</PasvMode>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Name>thietbivatlieunhakhoa.vn</Name>
-					<Site>0/SUPPORT/thietbivatlieunhakhoa.vn</Site>
-					<RemotePath>1 0 7 domains 24 thietbivatlieunhakhoa.vn 11 public_html 9 templates 7 product</RemotePath>
+					<Name>DEMO18-ORG</Name>
+					<Site>0/DEMO/DEMO18-ORG</Site>
+					<RemotePath>1 0 7 domains 22 demo18.ninavietnam.org 11 public_html 8 chonhanh</RemotePath>
 					<LocalPath>\</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>
-		<Setting name="Sitemanager last selected">0/ototinphat_700922w</Setting>
+		<Setting name="Sitemanager last selected">0/OUTSIDE/nhakhoalongan.vn</Setting>
 	</Settings>
 	<Queue />
 </FileZilla3>
