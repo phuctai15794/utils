@@ -18276,6 +18276,26 @@ Pass: phuctai@15794</Comments>
 				<DirectoryComparison>0</DirectoryComparison>
 			</Server>
 			<Server>
+				<Host>103.77.162.16</Host>
+				<Port>21</Port>
+				<Protocol>6</Protocol>
+				<Type>0</Type>
+				<User>bigcityh</User>
+				<Pass encoding="base64">YmlnNjg2ODY4Njg=</Pass>
+				<Logontype>1</Logontype>
+				<PasvMode>MODE_DEFAULT</PasvMode>
+				<EncodingType>Auto</EncodingType>
+				<BypassProxy>0</BypassProxy>
+				<Name>bigcityhouse.com</Name>
+				<Comments>Thong tin Hosting Control Panel CPANEL
+Hosting cho domain www.bigcityhouse.com
+Control panel: http://103.77.162.16:2082 hay http://bigcityhouse.com:2082
+Username: bigcityh
+Password: big68686868</Comments>
+				<SyncBrowsing>0</SyncBrowsing>
+				<DirectoryComparison>0</DirectoryComparison>
+			</Server>
+			<Server>
 				<Host>210.2.87.29</Host>
 				<Port>21</Port>
 				<Protocol>6</Protocol>
@@ -30543,38 +30563,36 @@ Password	UY4eOhNpL</Comments>
 		<Setting name="Persistent Choices">3</Setting>
 		<Setting name="Site Manager position">0 170 32 1084 756 </Setting>
 		<Setting name="Queue column widths">160 60 229 80 60 150</Setting>
-		<Setting name="Window position and size">1 223 73 900 524 </Setting>
 		<Setting name="Splitter positions (v2)">50 -84 494444444 171 171 500000000</Setting>
 		<Setting name="Greeting version">3.62.2</Setting>
 		<Setting name="Greeting resources" />
 		<Setting name="Last automatic update version">3.62.2</Setting>
-		<Setting name="Last automatic update check">2022-11-28 00:39:26</Setting>
-		<Setting name="Update Check New Version" platform="win">nightly 2022-11-27 https://filezilla-project.org/nightlies/2022-11-27/win64/FileZilla_3_setup.exe 12313000 sha512 e97c5a317156db65dcb7b1865a6c1a7506f0f7e06cc07450907c582abbea146f62aefc1e469d324ee9a34354c804f2fc2179d0d94bd5f0cef2ac61ba87fdbb5a sig:rbsESwT4IHThzdqMiPD6GArXxhBMOQl1oYOoN3oZ+BWsyQNRjqew0W4xP+gSNhE+ukWpcf72No4l7Si+OqOlAQ
-release 3.60.2 https://dl1.cdn.filezilla-project.org/FileZilla_3.60.2_win64-setup.exe 11847936 sha512 b532c9e82016dedbc04714ed659f459d1e87db926f4eed6eef5ff7daba450f91ea1558e247c87a7727c9cf8ec96d7cee3a6cd5159e7dc0ccd28ceb87f05e722a sig:fs3g+im02LEgN/kRpY8iVwt/xcfCfcwUB172qOqkqJL4CdY/FSvHtVA9XfGE5jeO6khKlw410pfYjrsk3IkVCw
-nightly 2022-11-27 https://filezilla-project.org/nightlies/2022-11-27/win64/FileZilla_3_setup.exe 12313000 sha512 e97c5a317156db65dcb7b1865a6c1a7506f0f7e06cc07450907c582abbea146f62aefc1e469d324ee9a34354c804f2fc2179d0d94bd5f0cef2ac61ba87fdbb5a sig:rbsESwT4IHThzdqMiPD6GArXxhBMOQl1oYOoN3oZ+BWsyQNRjqew0W4xP+gSNhE+ukWpcf72No4l7Si+OqOlAQ
-release 3.62.2 https://dl3.cdn.filezilla-project.org/FileZilla_3.62.2_win64-setup.exe 11905648 sha512 9596496e8200bb8d314503ddad973304a48461b8dcb052912d5d068d3877172ee1d57f53556b3807cd6df4c875babf1393f9a2b2bd1c8e6a9d9b37ba971ee656 sig:6DNMmysdug6EEKdEK5P3d8UIqgFH+LntZ3JTlKlfpVZEN4N2yN0PLQxYNtUOLNIFAxiz/eX9gw9enJe2WwgcCg
-</Setting>
+		<Setting name="Sitemanager last selected">0/chonhanh_1253517W</Setting>
+		<Setting name="Window position and size">0 223 73 900 524 </Setting>
 		<Setting name="Tab data" sensitive="1">
 			<Tabs>
 				<Tab connected="1" selected="1">
-					<Host>210.2.64.70</Host>
+					<Host>116.193.69.142</Host>
 					<Port>21</Port>
 					<Protocol>6</Protocol>
 					<Type>0</Type>
-					<User>demo18</User>
-					<Pass encoding="base64">cGh1Y3RhaTE1Nzk0</Pass>
+					<User>chonhanhvn</User>
+					<Pass encoding="base64">SGFWTlZzdDBxcndu</Pass>
 					<Logontype>1</Logontype>
 					<PasvMode>MODE_DEFAULT</PasvMode>
 					<EncodingType>Auto</EncodingType>
 					<BypassProxy>0</BypassProxy>
-					<Name>DEMO18-ORG</Name>
-					<Site>0/DEMO/DEMO18-ORG</Site>
-					<RemotePath>1 0 7 domains 22 demo18.ninavietnam.org 11 public_html 8 chonhanh</RemotePath>
+					<Name>chonhanh_1253517W</Name>
+					<Site>0/chonhanh_1253517W</Site>
+					<RemotePath>1 0 7 domains 11 chonhanh.vn 11 public_html 9 libraries</RemotePath>
 					<LocalPath>\</LocalPath>
 				</Tab>
 			</Tabs>
 		</Setting>
-		<Setting name="Sitemanager last selected">0/OUTSIDE/nhakhoalongan.vn</Setting>
+		<Setting name="Last automatic update check">2022-12-27 07:44:07</Setting>
+		<Setting name="Update Check New Version" platform="win">nightly 2022-12-27 https://filezilla-project.org/nightlies/2022-12-27/win64/FileZilla_3_setup.exe 12311504 sha512 7c1c2ee5baf4ea424a7e0e780707beb713b8cd5f82e20c4e97dfd229db7d01dae26914ffb68bca95f81727bb7084752a49d8bd3fc5b9c5a5132b6257be628cac sig:SjYq2eN5E4eQEE9qrCDRsoqP7KOYcpxmOJtlj+DJ0lxw4wX6rCv9QcSralYOiQZbXazSCR4VqakcgBHhKszmCw
+release 3.60.2 https://dl3.cdn.filezilla-project.org/FileZilla_3.60.2_win64-setup.exe 11847936 sha512 b532c9e82016dedbc04714ed659f459d1e87db926f4eed6eef5ff7daba450f91ea1558e247c87a7727c9cf8ec96d7cee3a6cd5159e7dc0ccd28ceb87f05e722a sig:fs3g+im02LEgN/kRpY8iVwt/xcfCfcwUB172qOqkqJL4CdY/FSvHtVA9XfGE5jeO6khKlw410pfYjrsk3IkVCw
+</Setting>
 	</Settings>
 	<Queue />
 </FileZilla3>
